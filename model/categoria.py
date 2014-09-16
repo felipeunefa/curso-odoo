@@ -8,8 +8,8 @@ class categoria(osv.osv):
     _description= 'CO Categoria'
     
     _columns={
-    'name':flields.char('Nombre'),
-    'Descripción':flields.text('Descripción'),
+    'name':fields.char('Nombre'),
+    'Descripción':fields.text('Descripción'),
     'perent_id':fields.many2one('co.categoria','Padre'),
     'child_id':fields.one2many('co.categoria','perent_id','Sub Categoria'),
     }

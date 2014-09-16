@@ -8,7 +8,7 @@ class multimedia(osv.osv):
     _description= 'CO Multimedia'
     
     _columns={
-    'cade':flields.char('Código'),
+    'cade':fields.char('Código'),
     'title':fields.char('Titulo'),
     'release_date':fields.date('Fecha de Publicación'),
     'categoria_id':fields.many2one('co.categoria','Categoria'),

@@ -8,8 +8,8 @@ class tiendas(osv.osv):
     _description= 'CO Tiendas'
     
     _columns={
-    'name':flields.char('Nombre de la tienda'),
-    'address'fields.char('Dirección'),
+    'name':fields.char('Nombre de la tienda'),
+    'address':fields.char('Dirección'),
     }
     
 tiendas()

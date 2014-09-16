@@ -9,19 +9,19 @@ class lineas_stock(osv.osv):
     
     
     _columns={
-    'mutimendia_id':flields.many2one('co.multimedia','Multimendia'),
-    'medio_id':flields.many2one('co.tipo.medio','tipo de Medio'),
-    'tienda_id':flields.many2one('co.tiendas','Tienda'),
-    'quantity'fields.integer('Cantidad'),
+    'mutimendia_id':fields.many2one('co.multimedia','Multimendia'),
+    'medio_id':fields.many2one('co.tipo.medio','tipo de Medio'),
+    'tienda_id':fields.many2one('co.tiendas','Tienda'),
+    'quantity':fields.integer('Cantidad'),
     }
     
 lineas_stock()
 
 class tiendas(osv.osv):
-    inherit='co.tiendas'
+    _inherit='co.tiendas'
     
     
     _columns={
-    'line_id':flields.one2many('co.lineas.stock','tienda_id','Stock'),
+    'line_id':fields.one2many('co.lineas.stock','tienda_id','Stock'),
     }
 tiendas()
