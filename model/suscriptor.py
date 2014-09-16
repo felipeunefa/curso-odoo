@@ -9,8 +9,8 @@ class supcriptor(osv.osv):
     
     _columns={
     'name':fields.char('Nombre'),
-    'identification':fiedls.char('Cedula'),
-    'address':fiedls.text('Dirección'),
+    'identification':fields.char('Cedula'),
+    'address':fields.text('Dirección'),
     }
     
-suscriptor()
+supcriptor()
