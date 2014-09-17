@@ -8,6 +8,7 @@ class solicitud(osv.osv):
     _description= 'CO Solicitud'
     
     _columns={
+    'code':fields.char('Codigo'),
     'suscriptor_id':fields.many2one('co.suscriptor','Afiliado'),
     'multimedia_id':fields.many2one('co.multimedia','Multimendia'),
     'medio_id':fields.many2one('co.tipo.medio','Tipo de Medio'),

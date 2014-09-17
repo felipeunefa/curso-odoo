@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<openerp>
+    <data>
+        <record id="view_suscripcion_form" model="ir.ui.view">
+        <field name="name">co.suscripcion.from</field>
+        <field name="model">co.suscripcion</field>
+        <field name="arch" type="xml" >
+            <form string="Multimedia" version="7.0">
+                <sheet>
+                      <div class="oe_title">
+                            <label for="code" class="oe_edit_only" />
+                                <h1>
+                                    <field name="code" readonly="1" />
+                                </h1>
+                                <field name="date_start"  />
+                                <field name="type"  />
+                                <field name="date_end"/>
+                                <field name="active" />
+                                <field name="suscriptor_id"/>
+                        </div>
+                              
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!--
+    vista tree
+-->
+    <record id="view_suscripcion_tree" model="ir.ui.view">
+        <field name="name">co.suscripcion.tree</field>
+        <field name="model">co.suscripcion</field>
+        <field name="arch" type="xml" >
+            <tree string="Multimedia">
+                    <field name="code" />
+                    <field name="date_start" />
+                    <field name="type"  />
+                    <field name="date_end"/>
+                    <field name="active" />
+                    <field name="suscriptor_id"/>
+            </tree>
+        </field>
+    </record>
+<!--
+    action
+-->
+    <record id="action_suscripcion" model="ir.actions.act_window">
+        <field name="name">Suscripcion</field>
+        <field name="res_model">co.suscripcion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_suscripcion_tree"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Acá se registra los contenido suscripciones del catálogo.
+            </p>
+        </field>
+    </record>
+        
+        <menuitem action="action_suscripcion" id="menu_suscripcion"
+                parent="submenu_multimedia" sequence="5" />
+
+    </data>
+</openerp>
+

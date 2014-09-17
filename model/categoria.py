@@ -9,7 +9,7 @@ class categoria(osv.osv):
     
     _columns={
     'name':fields.char('Nombre'),
-    'Descripción':fields.text('Descripción'),
+    'descripcion':fields.text('Descripción'),
     'perent_id':fields.many2one('co.categoria','Padre'),
     'child_id':fields.one2many('co.categoria','perent_id','Sub Categoria'),
     }

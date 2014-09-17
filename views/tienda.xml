@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<openerp>
+    <data>
+
+        <record id="view_tiendas_form" model="ir.ui.view">
+        <field name="name">co.tiendas.from</field>
+        <field name="model">co.tiendas</field>
+        <field name="arch" type="xml" >
+            <form string="Tiendas" version="7.0">
+                <sheet>
+                      <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                                <h1>
+                                    <field name="name" />
+                                </h1>
+                        </div>
+                        <notebook>
+                            <page string="Dirección">
+                                <group>
+                                    <field name="address"/>
+                                </group>
+                            </page>
+                             <page string="Stock">
+                                <group>
+                                    <field name="line_id">
+                                        <tree editable="botton" delete="false">
+                                                <field name="mutimendia_id"/>
+                                                <field name="tienda_id" invisible='1'/>
+                                                <field name="medio_id"/>
+                                                <field name="quantity"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!--
+    vista tree
+-->
+    <record id="view_tiendas_tree" model="ir.ui.view">
+        <field name="name">co.tiendas.tree</field>
+        <field name="model">co.tiendas</field>
+        <field name="arch" type="xml" >
+            <tree string="Tiendas">
+                    <field name="name"/>
+                    <field name="address"/>
+            </tree>
+        </field>
+    </record>
+<!--
+    action
+-->
+    <record id="action_tiendas" model="ir.actions.act_window">
+        <field name="name">Tiendas</field>
+        <field name="res_model">co.tiendas</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_tiendas_tree"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Acá se registra los contenisdos de
+            tiendas del catálogo.
+            </p>
+        </field>
+    </record>
+        
+        <menuitem action="action_tiendas" id="menu_tiendas"
+                parent="submenu_multimedia" sequence="25" />
+
+    </data>
+</openerp>
+
