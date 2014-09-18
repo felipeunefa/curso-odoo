@@ -57,9 +57,11 @@
             </p>
         </field>
     </record>
-        
+        <menuitem id="submenu_suscripciones" name="Suscripciones"
+                parent="menu_base_curso" sequence="5" 
+                groups="group_admin"/>
         <menuitem action="action_solicitud" id="menu_solicitud"
-                parent="submenu_multimedia" sequence="5" />
+                parent="submenu_suscripciones" sequence="5" />
 
     </data>
 </openerp>

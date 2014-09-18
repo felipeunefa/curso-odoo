@@ -7,6 +7,7 @@
   'version':'dia1',
   'depends':['base','mail', ],
   'data':[
+        'security/curso_odoo_security.xml',
         'views/curso_odoo_view.xml',
         'views/multimedia_view.xml',
         'views/tipo_medio_view.xml',
@@ -15,7 +16,10 @@
         'views/suscriptor.xml',
         'views/suscripcion.xml',
         'views/solicitud.xml',
+        'security/menu_sucurity.xml',
         'data/suscripcion_data.xml',
+        'security/ir.model.access.csv',
+       
   ],
   'demo':[],
 

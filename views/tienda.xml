@@ -70,9 +70,12 @@
             </p>
         </field>
     </record>
-        
+        <menuitem id="submenu_tienda" name="Tiendas"
+                parent="menu_base_curso" sequence="5" 
+                groups="group_admin"/>
+                
         <menuitem action="action_tiendas" id="menu_tiendas"
-                parent="submenu_multimedia" sequence="25" />
+                parent="submenu_tienda" sequence="25"  />
 
     </data>
 </openerp>
