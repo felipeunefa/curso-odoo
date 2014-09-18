@@ -18,6 +18,9 @@
                         </div>
                         <notebook>
                             <page string="Detalles">
+                                <group string="Disponibles">
+                                    <field name="stock" string="Disponibles"/>
+                                </group>
                                 <group>
                                     <field name="release_date"/>
                                     <field name="cade" required="1"/>
@@ -42,9 +45,10 @@
         <field name="model">co.multimedia</field>
         <field name="arch" type="xml" >
             <tree string="Multimedia">
+                    <field name="cade"/>
+                    <field name="stock" string="Disponibles"/>
                     <field name="title"/>
                     <field name="release_date"/>
-                    <field name="cade"/>
                     <field name="categoria_id"/>
             </tree>
         </field>

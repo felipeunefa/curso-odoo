@@ -25,10 +25,13 @@
                                 <group>
                                     <field name="line_id">
                                         <tree editable="botton" delete="false">
-                                                <field name="mutimendia_id"/>
-                                                <field name="tienda_id" invisible='1'/>
-                                                <field name="medio_id"/>
-                                                <field name="quantity"/>
+                                            <field name="medio_id" 
+                                                on_change="onchange_med(mutimendia_id)"/>
+                                            <field name="mutimendia_id" 
+                                                domain="[('medios_ids','=',medio_id)]"/>
+        
+                                            <field name="tienda_id" invisible='1'/>
+                                            <field name="quantity"/>
                                         </tree>
                                     </field>
                                 </group>

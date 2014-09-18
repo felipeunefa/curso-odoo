@@ -13,4 +13,9 @@ class supcriptor(osv.osv):
     'address':fields.text('Dirección'),
     }
     
+    _sql_constraints=[
+        ('identification_uniq','unique(identification)',
+         u'El numero de cédula ya existe')
+    ]
+    
 supcriptor()
