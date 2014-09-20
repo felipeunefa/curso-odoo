@@ -45,7 +45,7 @@
             </p>
         </field>
     </record>
-        
+    
         <menuitem action="action_tipo_medio" id="menu_tipo_medio"
                 parent="submenu_multimedia" sequence="10" />
 
