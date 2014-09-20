@@ -11,6 +11,7 @@ class supcriptor(osv.osv):
     'name':fields.char('Nombre'),
     'identification':fields.char('Cedula'),
     'address':fields.text('Dirección'),
+    'user_id':fields.many2one('res.users','Usuario'),
     }
     
     _sql_constraints=[

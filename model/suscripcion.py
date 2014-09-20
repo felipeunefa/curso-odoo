@@ -7,7 +7,29 @@ TIPOS=[
     ('plata','Plan Plata'),
     ('Bronce','plan Bronce')
 ]
-
+class tipo_suscripcion(osv.osv):
+    _name ='co.tipo.suscripcion'
+    _description= 'CO Tipo Suscripcion'
+    _rec_name='name'
+    
+    
+    _columns={
+    'name':fields.char('Nombre',required=True),
+    'medio_ids':fields.many2many(
+            'co.tipo.suscripcion',
+            'tipo_suscripcion_medio_rel',
+            'tipo_id',
+            'medio_id'),
+    
+    }
+    
+    _sql_constraints=[
+        ('name_uniq',
+         'unique(name)',
+         'El nombre no se puede repetir'),
+        ]
+        
+        
 class suscripcion(osv.osv):
     _name ='co.suscripcion'
     _description= 'CO Suscripcion'
@@ -15,7 +37,8 @@ class suscripcion(osv.osv):
     
     _columns={
     'code':fields.char('Código'),
-    'type':fields.selection(TIPOS,'Tipo de Suscripción',required=True),
+    'type':fields.many2one('co.tipo.suscripcion',
+    'Tipo de Suscripción',required=True),
     'date_start':fields.date('Inicio de Suscripción',required=True),
     'date_end':fields.date('Fin Suscripción',required=True),
     'active':fields.boolean('Activo'),
@@ -47,3 +70,16 @@ class suscripcion(osv.osv):
         return super(suscripcion,self).create(cr,uid,values,context=context)
     
 suscripcion()
+
+
+class suscriptor(osv.osv):
+    _inherit='co.suscriptor'
+     
+    _columns={
+        'suscripcion_ids':fields.one2many(
+             'co.suscripcion',
+            'suscriptor_id',
+        ),
+    }
+    
+suscriptor()

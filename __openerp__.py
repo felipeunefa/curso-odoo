@@ -16,9 +16,11 @@
         'views/suscriptor.xml',
         'views/suscripcion.xml',
         'views/solicitud.xml',
+        'views/tipo_suscripcion.xml',
         'security/menu_sucurity.xml',
         'data/suscripcion_data.xml',
         'security/ir.model.access.csv',
+        'report/listado_multimedia_report.xml',
        
   ],
   'demo':[],

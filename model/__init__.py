@@ -6,4 +6,5 @@ import multimedia
 import tienda
 import stock
 import solicitud
+import res_users
 

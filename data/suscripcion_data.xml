@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<openerp>
+<openerp> 
     <data>
+<!--
+        esto es la definicion de la secuencia....
+-->
         <record id="seq_suscripcion_type" model="ir.sequence.type">
             <field name="name">Secuencia suscripcion</field>
             <field name="code">seq.suscripcion</field>
@@ -11,6 +14,18 @@
             <field name="code">seq.suscripcion</field>
             <field name="padding" eval="4"/>
             <field name="prefix">SUS/%(year)s/</field>
+        </record>
+<!--
+        tipo  de suscripiom
+-->
+        <record id="tipo_suipcion_bronce" model="co.tipo.suscripcion">
+            <field name="name">Bronce</field>
+        </record>
+        <record id="tipo_suipcion_oro" model="co.tipo.suscripcion">
+            <field name="name">ORO</field>
+        </record>
+        <record id="tipo_suipcion_plata" model="co.tipo.suscripcion">
+            <field name="name">Plata</field>
         </record>
     </data>
 </openerp>

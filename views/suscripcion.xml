@@ -61,7 +61,8 @@
     </record>
         
         <menuitem action="action_suscripcion" id="menu_suscripcion"
-                parent="submenu_multimedia" sequence="5" />
+                parent="submenu_multimedia" sequence="5" 
+                groups="group_admin,group_suscriptor"/>
 
     </data>
 </openerp>
