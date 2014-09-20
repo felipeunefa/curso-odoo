@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<openerp>
+    <data>
+        <record id="view_categoria_form" model="ir.ui.view">
+        <field name="name">co.categoria.from</field>
+        <field name="model">co.categoria</field>
+        <field name="arch" type="xml" >
+            <form string="Cotegoria" version="7.0">
+                <sheet>
+                      <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                                <h1>
+                                    <field name="name" />
+                                </h1>
+                                <h3>
+                                    <field name="perent_id"/>
+                                </h3>
+                        </div>
+                        <notebook>
+                            <page string="Detalles">
+                                <group>
+                                    <label for="descripcion" string="Descripocion" />
+                                <field name="descripcion" />
+                                    <field name="child_id"/>
+                                </group>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!--
+    vista tree
+-->
+    <record id="view_categoria_tree" model="ir.ui.view">
+        <field name="name">co.categoria.tree</field>
+        <field name="model">co.categoria</field>
+        <field name="arch" type="xml" >
+            <tree string="Categoria">
+                    <field name="name"/>
+                    <field name="perent_id"/>
+                    <field name="child_id"/>
+            </tree>
+        </field>
+    </record>
+<!--
+    action
+-->
+    <record id="action_categoria" model="ir.actions.act_window">
+        <field name="name">Categoria</field>
+        <field name="res_model">co.categoria</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_categoria_tree"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Acá se registra los contenisdos de
+            categoria del catálogo.
+            </p>
+        </field>
+    </record>
+        
+        <menuitem action="action_categoria" id="menu_categoria"
+                parent="submenu_multimedia" sequence="15" />
+
+    </data>
+</openerp>
+
