@@ -27,6 +27,7 @@ class tipo_suscripcion(osv.osv):
         ('name_uniq',
          'unique(name)',
          'El nombre no se puede repetir'),
+         
         ]
         
         
@@ -62,7 +63,7 @@ class suscripcion(osv.osv):
         return True
     _constraints=[
         (_ckeck_date,'Fecha de inicio debe ser menor',
-         ['date_start','date_end']),
+         ['Fecha de inicio','Fecha fina']),
     ]
     def create(self,cr,uid,values,context=None):
         values.update({

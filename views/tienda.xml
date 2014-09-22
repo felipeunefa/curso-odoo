@@ -24,7 +24,7 @@
                              <page string="Stock">
                                 <group>
                                     <field name="line_id">
-                                        <tree editable="botton" delete="false">
+                                        <tree editable="botton" >
                                             <field name="medio_id" 
                                                 on_change="onchange_med(mutimendia_id)"/>
                                             <field name="mutimendia_id" 

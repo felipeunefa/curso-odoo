@@ -19,7 +19,6 @@
                                 <label for="user_id" class="oe_edit_only"/>
                                 <h3>
                                     <field name="user_id" domain="[('groups_id','=',%(group_suscriptor)d)]" />
-                                
                                 </h3>
                         </div>
                         <notebook>

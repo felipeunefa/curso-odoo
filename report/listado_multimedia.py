@@ -11,9 +11,9 @@ class listado_multimedia(report_sxw.rml_parse):
         })
     def _get_medios(self,multimedia):
         medios_str=''
-        for m in multimedia.medio_ids:
+        for m in multimedia:
             medios_str +="%s , %s" % (m.name,medios_str)
-        return medios_str 
+        return medios_str
 
 report_sxw.report_sxw('report.listado.multimedia',
     'co.multimedia',
